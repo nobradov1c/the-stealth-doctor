@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/LD40 Heavy Heist.mp3-ef5a116305764a9d5dc34ad189712d9e.mp3str"
+
+[deps]
+
+source_file="res://SFX/Music/LD40 Heavy Heist.mp3"
+dest_files=[ "res://.import/LD40 Heavy Heist.mp3-ef5a116305764a9d5dc34ad189712d9e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

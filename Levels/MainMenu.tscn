@@ -1,0 +1,119 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Interface/Theme.tres" type="Theme" id=1]
+[ext_resource path="res://GFX/Interface/Fonts/kenvector_future.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://GFX/Interface/PNG/metalPanel_blue.png" type="Texture" id=3]
+[ext_resource path="res://Levels/MainMenu.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="InputEventKey" id=4]
+pressed = true
+scancode = 32
+
+[sub_resource type="ShortCut" id=3]
+resource_local_to_scene = true
+shortcut = SubResource( 4 )
+
+[sub_resource type="InputEventKey" id=5]
+pressed = true
+scancode = 16777217
+
+[sub_resource type="ShortCut" id=6]
+shortcut = SubResource( 5 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.749146
+margin_bottom = -0.749146
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="NinePatchRect" parent="CenterContainer"]
+margin_left = 272.0
+margin_top = 100.0
+margin_right = 752.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 480, 400 )
+texture = ExtResource( 3 )
+patch_margin_left = 12
+patch_margin_top = 40
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 30.0
+margin_right = -12.0
+margin_bottom = -12.0
+custom_constants/separation = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CenterContainer/Background/VBoxContainer"]
+margin_right = 456.0
+margin_bottom = 27.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Welcome to"
+align = 1
+
+[node name="Label2" type="Label" parent="CenterContainer/Background/VBoxContainer"]
+margin_top = 59.0
+margin_right = 456.0
+margin_bottom = 94.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "The Stealth Doctor"
+align = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/Background/VBoxContainer"]
+margin_top = 126.0
+margin_right = 456.0
+margin_bottom = 265.0
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/Background/VBoxContainer/CenterContainer"]
+margin_left = 134.0
+margin_right = 322.0
+margin_bottom = 139.0
+custom_constants/vseparation = 22
+
+[node name="StartButton" type="Button" parent="CenterContainer/Background/VBoxContainer/CenterContainer/GridContainer"]
+margin_right = 188.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+shortcut = SubResource( 3 )
+text = "   Start Mission   "
+
+[node name="TutorialButton" type="Button" parent="CenterContainer/Background/VBoxContainer/CenterContainer/GridContainer"]
+margin_top = 54.0
+margin_right = 188.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 32, 32 )
+text = "   Tutorial   "
+
+[node name="QuitButton" type="Button" parent="CenterContainer/Background/VBoxContainer/CenterContainer/GridContainer"]
+margin_top = 108.0
+margin_right = 188.0
+margin_bottom = 139.0
+shortcut = SubResource( 6 )
+text = "   quit game   "
+
+[connection signal="pressed" from="CenterContainer/Background/VBoxContainer/CenterContainer/GridContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="CenterContainer/Background/VBoxContainer/CenterContainer/GridContainer/TutorialButton" to="." method="_on_TutorialButton_pressed"]
+[connection signal="pressed" from="CenterContainer/Background/VBoxContainer/CenterContainer/GridContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

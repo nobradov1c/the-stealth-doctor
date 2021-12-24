@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spy.mp3-f51daec2a352c9cfc89ba348191bd609.mp3str"
+
+[deps]
+
+source_file="res://SFX/Music/Spy.mp3"
+dest_files=[ "res://.import/Spy.mp3-f51daec2a352c9cfc89ba348191bd609.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
